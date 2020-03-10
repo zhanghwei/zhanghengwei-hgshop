@@ -15,16 +15,16 @@ public class UserController {
 	@RequestMapping("toLogin")
 	public String toLogin() {
 	
-		return "login";
+		return "login2";
 	}
 	@RequestMapping("login")
 	public String login(String name,String password) {
 		System.out.println(name+"-----"+password);
 		if(userService.login(name, password)) {
-			return "index";
+			return "redirect:index";
 		}
 		else {
-			return "login";
+			return "login2";
 		}
 		
 	}

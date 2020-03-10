@@ -1,6 +1,9 @@
 package com.zhangwei.hgshop.pojo;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * 
  * @author MACHENIKE
@@ -12,24 +15,37 @@ public class Category implements Serializable {
 	 */
 	private static final long serialVersionUID = 9018756890495326995L;
 	private Integer id;
-	private Integer parent_id;//上一级别分类 的id
+	private Integer parentId;//上一级别分类 的id
+	@JsonProperty("text")
 	private String name;//分类的名称
 	private String path;//从根分类到当前分类的路径
+	@JsonProperty("nodes")
+	private List<Category> children;
+	
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", parent_id=" + parent_id + ", name=" + name + ", path=" + path + "]";
+		return "Category [id=" + id + ", parentId=" + parentId + ", name=" + name + ", path=" + path + "]";
 	}
+	
+	public List<Category> getChildren() {
+		return children;
+	}
+
+	public void setChildren(List<Category> children) {
+		this.children = children;
+	}
+
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getParent_id() {
-		return parent_id;
+	public Integer getParentId() {
+		return parentId;
 	}
-	public void setParent_id(Integer parent_id) {
-		this.parent_id = parent_id;
+	public void setParentId(Integer parentId) {
+		this.parentId = parentId;
 	}
 	public String getName() {
 		return name;
@@ -71,6 +87,17 @@ public class Category implements Serializable {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	public Category(Integer id, Integer parentId, String name, String path) {
+		super();
+		this.id = id;
+		this.parentId = parentId;
+		this.name = name;
+		this.path = path;
+	}
+	public Category() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 

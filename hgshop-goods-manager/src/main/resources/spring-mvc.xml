@@ -10,7 +10,7 @@
 
 	<!-- 扫描器 -->
 	<context:component-scan
-		base-package="com.zhangwei.hgshop.controller" />
+		base-package="com.zhangwei.hgshop.controller,com.zhangwei.hgshop.config" />
 	<!-- 视图解析图 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -32,7 +32,7 @@
 	<dubbo:application name="hgshop-manage" />
 	<!-- 注册中心 -->
 	<dubbo:registry
-		address="zookeeper://127.0.0.1:2181" />
+		address="zookeeper://192.168.124.7:2181" />
 	<!-- 配置扫描包的路径 -->	
 	<dubbo:annotation package="com.zhangwei.hgshop.controller"/>
 </beans>

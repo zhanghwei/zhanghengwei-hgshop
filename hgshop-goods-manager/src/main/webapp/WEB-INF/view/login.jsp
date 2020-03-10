@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!-- saved from url=(0045)https://v4.bootcss.com/docs/examples/sign-in/ -->
 <html lang="en">
 <head>
@@ -10,7 +12,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.6">
-<title>Signin Template � Bootstrap..</title>
+<title>Signin Template · Bootstrap..</title>
 
 <link rel="canonical"
 	href="https://v4.bootcss.com/docs/examples/sign-in/">
@@ -55,29 +57,29 @@
 		font-size: 3.5rem;
 	}
 }
+
 </style>
 <!-- Custom styles for this template -->
 <link href="resource/css/signin.css" rel="stylesheet">
 </head>
 <body class="text-center">
 	<form class="form-signin" action="/login" method="post">
-		<img class="mb-4" src="resource/img/bootstrap-solid.svg" alt=""
+		<img class="mb-4" src="resource/img/wz.jpg"" alt=""
 			width="72" height="72">
-		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+		<h4 class="h4 mb-4 font-weight-normal">欢迎进入伟哥商城</h4>
 		<label for="inputEmail" class="sr-only">Email address</label> <input
 			type="text" id="name" name="name" class="form-control"
-			placeholder="Email address" required="" autofocus=""> <label
+			placeholder="用户名" required="" autofocus=""> <label
 			for="inputPassword" class="sr-only">Password</label> <input
 			type="password" id="password" name="password" class="form-control"
-			placeholder="Password" required="">
+			placeholder="密码" required="">
 		<div class="checkbox mb-3">
 			<label> <input type="checkbox" value="remember-me">
-				Remember me
+				不要忘了我
 			</label>
 		</div>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-			in</button>
-		<p class="mt-5 mb-3 text-muted">� 2017-2020</p>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+		<p class="mt-5 mb-3 text-muted">@2017-2020</p>
 	</form>
 
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhangwei.hgshop.dao.SkuDao">
+<select id="list" resultMap="skuMapper">
+select * from hg_sku order by spu_id desc,id desc
+</select>
+<resultMap type="Sku" id="skuMapper">
+<id column="id" property="id"/>
+<result column="sell_point" property="sellPoint"/>
+<result column="stock_count" property="stockCount"/>
+<result column="create_time" property="createTime"/>
+
+<result column="update_time" property="updateTime"/>
+<result column="cost_price" property="costPrice"/>
+<result column="market_price" property="marketPrice"/>
+
+<result column="cart_thumbnail" property="cartThumbnail"/>
+<result column="spu_id" property="spuId"/>
+<association property="spu" column="spu_id" select="com.zhangwei.hgshop.dao.SpuDao.findById"></association>
+<collection property="specs" column="id" select="findSpecsBySkuid"></collection>
+</resultMap>
+<select id="findSpecsBySkuid" resultType="SpecOption">
+
+select spec.id as specId,
+ spec.spec_name as specName,
+ specval.option_name as optionName,
+ specval.id oid from hg_sku_spec as sku  
+left join hg_spec as spec on spec.id=sku.spec_id
+left join hg_spec_option as specval on specval.id=sku.spec_option_id
+ where sku.sku_id=#{value}
+</select>
+<select id="get" resultMap="skuMapper">
+select *,id as detailId from hg_sku where id=#{value}
+</select>
+</mapper>

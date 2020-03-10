@@ -196,7 +196,7 @@
 				<configuration>
 					<httpConnector>
 						<!-- 端口号 -->
-						<port>82</port>
+						<port>90</port>
 						<!-- 项目访问路径 -->
 						<host>localhost</host>
 					</httpConnector>

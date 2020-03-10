@@ -69,5 +69,16 @@ public class Brand implements Serializable {
 			return false;
 		return true;
 	}
+	public Brand(Integer id, String name, String firstChar, int deletedFlag) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.firstChar = firstChar;
+		this.deletedFlag = deletedFlag;
+	}
+	public Brand() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }
