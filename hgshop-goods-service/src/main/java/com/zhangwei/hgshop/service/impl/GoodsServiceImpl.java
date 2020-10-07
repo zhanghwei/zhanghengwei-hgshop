@@ -37,6 +37,7 @@ public class GoodsServiceImpl implements GoodsService{
 	@Override
 	public int add(Brand brand) {
 		// TODO Auto-generated method stub
+		System.out.println("+++++++++++++++++++++++++++");
 		return brandDao.add(brand);
 	}
 
